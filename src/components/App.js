@@ -9,6 +9,7 @@ import MeetupEvents from './meetups/MeetupEvents'
 import Showcase from './showcase/Showcase'
 import Candidates from './candidates/Candidates'
 import CreateJobPosts from './jobposts/CreateJobPosts'
+import Profile from './profile/Profile';
 
 class App extends Component {
   render() {
@@ -22,6 +23,7 @@ class App extends Component {
       <Route path='/showcase' component={Showcase} />
       <Route path='/candidates' component={Candidates} />
       <Route path='/createjobs' component={CreateJobPosts} />
+      <Route path='/profile' component={Profile} />
       </div>
       </Router>
     );
