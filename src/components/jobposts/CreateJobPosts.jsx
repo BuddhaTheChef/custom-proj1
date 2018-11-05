@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { Button } from 'semantic-ui-react'
 
 class CreateJobPosts extends Component {
 
@@ -34,9 +35,8 @@ class CreateJobPosts extends Component {
   render() {
     return (
       <div className="createjobs-main-div">
-      <div className="float-left-div">
-      <img src="" alt="pic"/>
-        <h1 className="createjobs-main-title">Find the right canditate for the job</h1>
+          <h1 className="createjobs-main-title">Find the right canditate for the job</h1>
+        <div className="float-left-div">
         </div>
         <div className="float-right-div">
         <div className="roll-in-blurred-left">
@@ -55,12 +55,12 @@ class CreateJobPosts extends Component {
               <input className="jobposts-input" name="desiredSalary" value={this.state.desiredSalary} onChange={e => this.onChange(e)} />
             <br />
             <header className="jobposts-header">CoverLetter:</header>
-              <input className="jobposts-input-coverLetter" name="coverLetter" value={this.state.coverLetter} onChange={e => this.onChange(e)} />
+              <textarea className="jobposts-input-coverLetter" name="coverLetter" value={this.state.coverLetter} onChange={e => this.onChange(e)} />
             <br />
             <header className="jobposts-header">Resume:</header>
-              <input name="resume" value={this.state.resume} onChange={e => this.onChange(e)} />
+              <input placeholder=".pdf button" name="resume" value={this.state.resume} onChange={e => this.onChange(e)} />
             <br />
-              <button onClick={(e) => this.onSubmit(e)}>Submit</button>
+              <Button className="jobposts-subit-button" basic color='pink' onClick={(e) => this.onSubmit(e)}>Submit</Button>
           </form>
         </div>
         </div>
