@@ -8,8 +8,10 @@ background-color: rgb(66, 66, 66);
 }
 
 .App {
-margin-top: 90px;
+height: 100vh;
 }
+
+/* /Nav Bar/ */
 
 .main-nav-title {
   margin-left: 30px;
@@ -21,12 +23,6 @@ margin-top: 90px;
 
 .main-nav-title:hover {
   color: magenta;
-}
-
-.default-title {
-  color: magenta;
-  text-align: center;
-  margin-top: 30px;
 }
 
 .ui.fixed.menu {
@@ -44,4 +40,113 @@ margin-top: 90px;
   width: 74%;
   font-weight: bold;
   font-size: 15px;
+}
+
+/* / Landing Page / */
+
+.default-title {
+  color: magenta;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* /Create Jobs page/ */
+
+.createjobs-main-div {
+  width: 100%;
+  height: 100%;
+}
+
+.float-left-div {
+  float: left;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+}
+
+.float-right-div {
+  float: right;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.createjobs-main-title {
+
+}
+
+.roll-in-blurred-left {
+  margin-top: 70px;
+  margin-left: 20px;
+  height: 75%;
+  width: 50%;
+  border-radius: 9px;
+  padding: 25px;
+  background: whitesmoke;
+	-webkit-animation: roll-in-blurred-left 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+	        animation: roll-in-blurred-left 1.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+}
+
+@-webkit-keyframes roll-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+            transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes roll-in-blurred-left {
+  0% {
+    -webkit-transform: translateX(-1000px) rotate(-720deg);
+            transform: translateX(-1000px) rotate(-720deg);
+    -webkit-filter: blur(50px);
+            filter: blur(50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0) rotate(0deg);
+            transform: translateX(0) rotate(0deg);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.job-post-title {
+  text-align: center;
+}
+
+.jobposts-header {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.jobposts-input {
+  border-radius: 3px;
+  border: none;
+  font-size: 15px;
+  width: 100%;
+  height: 35px;
+}
+
+.jobposts-input-coverLetter {
+  border-radius: 3px;
+  border: none;
+  font-size: 13px;
+  width: 100%;
+  height: 135px;
 }
