@@ -5,7 +5,6 @@ class HomePage extends Component {
   render() {
     return (
       <h1 className="default-title">The Holy Grail for New Developers</h1>
-
     );
   }
 }

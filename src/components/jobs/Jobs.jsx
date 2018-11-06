@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
-import '../App.css';
+import React, { Component } from "react";
+import "../App.css";
 
 class Jobs extends Component {
   render() {
-    return (
-      <h1 className="">Job Dashboard</h1>
-
-    );
+    return <h1 className="">Job Dashboard</h1>;
   }
 }
 

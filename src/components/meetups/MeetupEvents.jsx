@@ -4,8 +4,14 @@ import '../App.css';
 class MeetupEvents extends Component {
   render() {
     return (
-      <h1 className="">Meetup Events</h1>
-
+      <div>
+        <h1 className="">Meetup Events</h1>
+        <h3>
+        City: <input id="city" placeholder="Seattle"></input>
+        <br />
+        <button id="submit-city">Submit</button>
+        </h3>
+      </div>
     );
   }
 }

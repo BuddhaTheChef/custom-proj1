@@ -4,8 +4,7 @@ import '../App.css';
 class Profile extends Component {
   render() {
     return (
-      <h1 className="">My Profile</h1>
-
+      <h1>My Profile</h1>
     );
   }
 }
