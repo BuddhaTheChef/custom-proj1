@@ -77,7 +77,13 @@ class MeetupEvents extends Component {
             <div className="main-event-div" key={item.id}>
             <li className="li-event" >
             <div className="event-img-div">
-            <div style={{ backgroundImage:`url(${item.key_photo.photo_link})`, backgroundSize: 'cover', backgroundPosition: 'center', height: 'inherit', marginLeft: '11px', borderRadius: '7px'}} alt="group_pic"></div>
+            {(item.key_photo !== undefined)
+              ?
+            <div  style={{ backgroundImage:`url(${item.key_photo.photo_link})`, backgroundSize: 'cover', backgroundPosition: 'center', height: 'inherit', marginLeft: '11px', borderRadius: '7px'}} alt="group_pic">
+            </div>
+            :
+            <img src="../assets/workpic.jpg" alt="errorpic" />
+          }
             </div>
             <div className="event-div-info">
               <h1 className="event-title-div"> {item.name} </h1>
