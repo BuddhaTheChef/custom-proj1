@@ -62,7 +62,9 @@ class MeetupEvents extends Component {
     else {
       return (
         <div>
-          <h1 className="">Meetup Events</h1>
+        <div className="meetup-events-title-div">
+          <h1 className="meetup-events-title">Meetup Events</h1>
+          </div>
           <div className="city-input-div">
           <input className="city-input" id="city" refs="textbox" onChange={event=> this.setState({query: event.target.value})} placeholder="Search by city"/>
           </div>
