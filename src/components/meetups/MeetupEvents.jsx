@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { Button } from "semantic-ui-react";
 
 class MeetupEvents extends Component {
 
@@ -62,11 +63,13 @@ class MeetupEvents extends Component {
       return (
         <div>
           <h1 className="">Meetup Events</h1>
-          <h3>
-          City: <input id="city" refs="textbox" onChange={event=> this.setState({query: event.target.value})} placeholder="Search by city"/>
+          <div className="city-input-div">
+          <input className="city-input" id="city" refs="textbox" onChange={event=> this.setState({query: event.target.value})} placeholder="Search by city"/>
+          </div>
           <br />
-          <button id="submit-city" onClick={() => this.changeCity()}>Submit</button>
-          </h3>
+          <div className="city-button-div">
+          <Button basic color="pink" id="submit-city" onClick={() => this.changeCity()}>Submit</Button>
+          </div>
           <ul className="ul-event">
           {items.map(item => (
             <div className="main-event-div" key={item.id}>
