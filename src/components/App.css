@@ -177,7 +177,7 @@ height: 100vh;
 }
 
 .main-event-div {
-  display: flex;
+  z-index: 1;
   width: 60%;
   border: solid lightgrey 2px;
   border-radius: 11px;
@@ -187,7 +187,6 @@ height: 100vh;
 }
 
 .li-event {
-  display: flex;
   background-image: linear-gradient(
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
@@ -199,18 +198,22 @@ height: 100vh;
 }
 
 .event-img-div {
-  margin: 10px;
+  width: 40%;
+height: 270px;
+border-radius: 7px;
+margin: 10px;
+display: inline-block;
 }
 
-.event-img {
-  width: 277px;
-  height: 275px;
-  border-radius: 7px;
+.event-title-div {
+
 }
 
 .event-div-info {
+  width: 55%;
   margin: 10px;
   text-align: center;
+  display: inline-block;
   color: lightgrey;
 }
 
@@ -222,6 +225,7 @@ height: 100vh;
   padding: 18px 20px;
   overflow: auto;
   width: 90%;
+  margin-bottom: 13px;
   margin-top: 15px;
   height: 92px;
   margin-left: 28px;

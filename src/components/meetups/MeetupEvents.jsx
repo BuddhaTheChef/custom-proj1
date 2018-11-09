@@ -72,10 +72,10 @@ class MeetupEvents extends Component {
             <div className="main-event-div" key={item.id}>
             <li className="li-event" >
             <div className="event-img-div">
-            <img className="event-img" alt="group_pic" src={item.key_photo.photo_link} />
+            <div style={{ backgroundImage:`url(${item.key_photo.photo_link})`, backgroundSize: 'cover', backgroundPosition: 'center', height: 'inherit', marginLeft: '11px', borderRadius: '7px'}} alt="group_pic"></div>
             </div>
             <div className="event-div-info">
-              <h1> {item.name} </h1>
+              <h1 className="event-title-div"> {item.name} </h1>
               <h3>Location: {item.city}, {item.state} | <span> Event Type: {item.category.name}</span> </h3>
               <h3>When: {new Intl.DateTimeFormat('en-GB', {
           year: 'numeric',
