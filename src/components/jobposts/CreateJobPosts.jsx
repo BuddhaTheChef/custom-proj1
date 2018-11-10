@@ -83,12 +83,15 @@ class CreateJobPosts extends Component {
               />
               <br />
               <header className="jobposts-header">Resume:</header>
+              <div className="upload-btn-wrapper">
+              <button className="btn">Upload a file</button>
               <input
-                placeholder=".pdf button"
+                type="file"
                 name="resume"
                 value={this.state.resume}
                 onChange={e => this.onChange(e)}
               />
+              </div>
               <br />
               <Button
                 className="jobposts-subit-button"
