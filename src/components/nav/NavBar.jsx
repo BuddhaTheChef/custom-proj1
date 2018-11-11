@@ -14,7 +14,7 @@ class NavBar extends Component {
          <Menu.Item as={NavLink} to='/showcase' name="Showcase"/>
          <Menu.Item as={NavLink} to='/candidates'  name="Candidates near you"/>
          <Menu.Item as={NavLink} to='/createjobs'>
-         <Button className="nav-button" basic color='black'>Create Job Postings</Button>
+         <Button className="nav-button" basic color='black'>Quick Job Apply</Button>
          </Menu.Item>
          <Menu.Item as={NavLink} to='/profile'>
          <Button className="nav-button" basic color='black'>Profile</Button>

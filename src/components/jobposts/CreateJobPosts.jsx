@@ -27,7 +27,8 @@ class CreateJobPosts extends Component {
       email: "",
       desiredSalary: "",
       coverLetter: "",
-      resume: ""
+      resume: "",
+      porftfolio: ""
     });
   };
 
@@ -40,7 +41,7 @@ class CreateJobPosts extends Component {
         <div className="float-left-div" />
         <div className="float-right-div">
           <div className="roll-in-blurred-left">
-            <h1 className="job-post-title">Create Job Postings</h1>
+            <h1 className="job-post-title">Direct Application</h1>
             <form>
               <header className="jobposts-header">First Name:</header>
               <input
@@ -92,6 +93,14 @@ class CreateJobPosts extends Component {
                 onChange={e => this.onChange(e)}
               />
               </div>
+              <br />
+              <header className="jobposts-header">Porftfolio Site:</header>
+              <input
+                className="jobposts-input"
+                name="porftfolio"
+                value={this.state.porftfolio}
+                onChange={e => this.onChange(e)}
+              />
               <br />
               <Button
                 className="jobposts-subit-button"

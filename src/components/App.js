@@ -10,10 +10,12 @@ import Showcase from "./showcase/Showcase";
 import Candidates from "./candidates/Candidates";
 import CreateJobPosts from "./jobposts/CreateJobPosts";
 import Profile from "./profile/Profile";
+import { CSSTransition } from 'react-transition-group';
 
 class App extends Component {
   render() {
     return (
+      <CSSTransition in={true} appear={true} timeout={7000} classNames="fade">
       <Router>
         <div className="App">
           <NavBar />
@@ -26,6 +28,7 @@ class App extends Component {
           <Route path="/profile" component={Profile} />
         </div>
       </Router>
+      </CSSTransition>
     );
   }
 }

@@ -66,7 +66,7 @@ class MeetupEvents extends Component {
           <h1 className="meetup-events-title">Meetup Events</h1>
           </div>
           <div className="city-input-div">
-          <input className="city-input" id="city" refs="textbox" onChange={event=> this.setState({query: event.target.value})} placeholder="Search by city"/>
+          <input className="city-input" id="city" refs="textbox" onChange={event=> this.setState({query: event.target.value})} placeholder="Enter City"/>
           </div>
           <br />
           <div className="city-button-div">
