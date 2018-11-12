@@ -363,3 +363,50 @@ display: inline-block;
   opacity: 1;
   transition: opacity 1000ms linear;
 }
+
+
+
+
+
+.backdrop {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.3);
+  padding: 50px;
+}
+
+.modal {
+  background-color: #fff;
+  z-index: 20;
+  border-radius: 5px;
+  max-width: 600px;
+  min-height: 495px;
+  margin: 120px auto 0px auto;
+  padding: 30px;
+};
+
+.backdrop-signup {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.3);
+  padding: 50px;
+}
+
+.modal-signup {
+  background-color: #fff;
+  -webkit-transform: translateZ(0);
+  z-index: 20;
+  border-radius: 5px;
+  max-width: 600px;
+  min-height: 495px;
+  margin: 120px auto 0px auto;
+  padding: 30px;
+};
