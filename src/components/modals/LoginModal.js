@@ -16,10 +16,10 @@ const loginModalMainDiv = {
 }
 
 const loginModalInput = {
-  width: '100%',
+width: '100%',
 backgroundColor: 'white',
 borderRadius: '5px',
-border: '1px solid darkgray',
+border: '1px solid magenta',
 height: '30px'
 
 }
@@ -68,9 +68,6 @@ class LoginModal extends Component {
           <Button color="pink" style={loginSubmitButton}>Submit</Button>
           <br />
           <p style={signUpWords}>Not a User? <span href="">Singup</span></p>
-          <div className="footer">
-
-          </div>
         </div>
       </div>
     );
