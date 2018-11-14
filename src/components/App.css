@@ -11,7 +11,7 @@ background-color: rgb(66, 66, 66);
 height: 100vh;
 }
 
-/* /Nav Bar/ */
+/* /////////////////////////////////////Nav Bar//////////////////////////////////////// */
 
 .main-nav-title {
   margin-left: 30px;
@@ -43,7 +43,7 @@ height: 100vh;
   height: 64px;
 }
 
-/* / Landing Page / */
+/* /////////////////////////////////////Landing Page//////////////////////////////////////// */
 
 .main-landing-div {
   opacity: 0.6;
@@ -102,7 +102,73 @@ height: 100vh;
   }
 }
 
-/* /Create Jobs page/ */
+ /* /////////////////////////////////////Profile Component//////////////////////////////////////// */
+
+.main-div-profile {
+width: 100%;
+height: 100%;
+}
+
+.profile-info-header {
+height: 65%;
+justify-content: center;
+align-items: center;
+display: flex;
+background-color: rgb(45,45,45);
+flex-direction: column;
+  box-shadow: 0px 0px 34px 4px rgba(0,0,0, 0.43);
+  position:relative;
+  color: whitesmoke;
+  z-index: 3;
+}
+
+.profile-edit-header-button {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 0px;
+  margin-right: 4%;
+}
+
+.profile-image-div {
+  width: 230px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    align-items: center;
+    height: 215px;
+    border: solid 1px whitesmoke;
+}
+
+.profile-info-footer {
+  display: flex;
+  height: 93%;
+  background-color: rgba(231, 76, 255,0.5);
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-footer-title-div {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-footer-title {
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+
+.profile-footer-main-content-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 1px;
+  width: 87%;
+  height: 78%;
+}
+
+ /* /////////////////////////////////////Create Jobs Page//////////////////////////////////////// */
+
 
 .createjobs-main-div {
   width: 100%;
@@ -248,7 +314,7 @@ height: 100vh;
   width: 33% !important;
 }
 
-/* /MeetupEvents / */
+/* /////////////////////////////////////Meetup Events//////////////////////////////////////// */
 
 .meetup-events-title-div {
   width: 100%;
@@ -365,8 +431,7 @@ display: inline-block;
 }
 
 
-
-
+/* ///////////////////////////////////// Signup & Login modual//////////////////////////////////////// */
 
 .backdrop {
   position: fixed;
