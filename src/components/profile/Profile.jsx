@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { Button } from 'semantic-ui-react';
+import defaultPic from '../../assets/default-user-icon.jpg'
 
 class Profile extends Component {
   render() {
@@ -10,7 +11,9 @@ class Profile extends Component {
       <div className="profile-edit-header-button">
       <Button inverted color="black">Edit Header</Button>
       </div>
-      <div className="profile-image-div">Insert picture here</div>
+      <div className="profile-image-div">
+      <img className="profile-default-img" src={defaultPic} alt="default pic" />
+      </div>
       <h1>First Name, Last Name</h1>
       <h2>Aspirining [Enter Job Type Here]</h2>
       <h3>- Enter Skill List Here -</h3>
@@ -19,7 +22,7 @@ class Profile extends Component {
       <div className="profile-footer-title-div">
       <h1 className="profile-footer-title">Something Unique</h1>
       </div>
-      <div className="profile-footer-main-content-div"> 
+      <div className="profile-footer-main-content-div">
       <h1>Some Content here</h1>
       </div>
       </div>

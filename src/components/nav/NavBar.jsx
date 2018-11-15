@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Menu, Container, Button } from 'semantic-ui-react';
 import { NavLink, Link, withRouter} from 'react-router-dom';
 import '../App.css';
+import defaultPic from '../../assets/default-user-icon.jpg'
 
 class NavBar extends Component {
   render() {
@@ -18,6 +19,7 @@ class NavBar extends Component {
          </Menu.Item>
          <Menu.Item as={NavLink} to='/profile'>
          <Button className="nav-button" basic color='black'>Profile</Button>
+          <img className="nav-default-img" src={defaultPic} alt="default pic" />
          </Menu.Item>
        </Container>
      </Menu>
