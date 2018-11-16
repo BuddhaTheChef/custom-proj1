@@ -17,10 +17,14 @@ class NavBar extends Component {
          <Menu.Item as={NavLink} to='/createjobs'>
          <Button className="nav-button" basic color='black'>Quick Job Apply</Button>
          </Menu.Item>
-         <Menu.Item as={NavLink} to='/profile'>
-         <Button className="nav-button" basic color='black'>Profile</Button>
+         {this.props.authenticated ?
+         (
+           <Menu.Item as={NavLink} to='/profile'>
+         <div className="nav-button" basic="true" color='black'>Profile</div>
           <img className="nav-default-img" src={defaultPic} alt="default pic" />
          </Menu.Item>
+       )
+         : (<div></div>)  }
        </Container>
      </Menu>
     );

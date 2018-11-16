@@ -11,14 +11,39 @@ import Candidates from "./candidates/Candidates";
 import CreateJobPosts from "./jobposts/CreateJobPosts";
 import Profile from "./profile/Profile";
 import { CSSTransition } from 'react-transition-group';
+import firebase from '../config/firebase'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      user: {},
+      authenticated: false
+    }
+  }
+
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if(user) {
+        this.setState({user});
+      }
+      else {
+        this.setState({user: null})
+      }
+    })
+  }
+
   render() {
     return (
       <CSSTransition in={true} appear={true} timeout={7000} classNames="fade">
       <Router>
         <div className="App">
-          <NavBar />
+          <NavBar authenticated={this.state.authenticated} />
           <Route path="/" exact component={HomePage} />
           <Route path="/jobs" component={Jobs} />
           <Route path="/meetupevents" component={MeetupEvents} />

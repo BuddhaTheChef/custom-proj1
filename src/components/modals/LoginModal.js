@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import "../App.css";
 import PropTypes from "prop-types";
-import { Button } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react';
+import firebase from '../../config/firebase'
+import {withRouter} from 'react-router-dom'
 
 
 const loginModalHeader = {
@@ -47,6 +49,28 @@ color: 'magenta'
 }
 
 class LoginModal extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleChange = this.handleChange.bind(this)
+    this.login = this.login.bind(this)
+
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+
+  login = async e =>  {
+    e.preventDefault();
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password);
+    this.props.history.push("/profile")
+  }
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
   render() {
     // Render nothing if the "show" prop is false
     if (!this.props.show) {
@@ -61,11 +85,11 @@ class LoginModal extends Component {
           <h1 style={loginModalHeader}>Login</h1>
           <div style={loginModalMainDiv}>
           <h2>E-mail:</h2>
-          <input style={loginModalInput} />
+          <input value={this.state.email} onChange={this.handleChange} type="email" name="email" style={loginModalInput} />
           <h2>Password:</h2>
-          <input style={loginModalInput} />
+          <input value={this.state.password} onChange={this.handleChange} type="password" name="password" style={loginModalInput} />
           </div>
-          <Button color="pink" style={loginSubmitButton}>Submit</Button>
+          <Button color="pink" onClick={this.login} style={loginSubmitButton}>Submit</Button>
           <br />
           <p style={signUpWords}>Not a User? <span href="">Singup</span></p>
         </div>
@@ -80,4 +104,4 @@ LoginModal.propTypes = {
   children: PropTypes.node
 };
 
-export default LoginModal;
+export default withRouter(LoginModal);

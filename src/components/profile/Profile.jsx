@@ -5,6 +5,7 @@ import defaultPic from '../../assets/default-user-icon.jpg'
 
 class Profile extends Component {
   render() {
+    console.log(this.props)
     return (
       <div className="main-div-profile">
       <div className="profile-info-header">

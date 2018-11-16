@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../App.css";
 import PropTypes from "prop-types";
-
+import firebase from '../../config/firebase'
 import { Button } from 'semantic-ui-react'
 
 
@@ -17,7 +17,7 @@ const signupModalMainDiv = {
 }
 
 const signupModalInput = {
-  width: '100%',
+width: '100%',
 backgroundColor: 'white',
 borderRadius: '5px',
 border: '1px solid magenta',
@@ -48,6 +48,33 @@ color: 'magenta'
 }
 
 class SignupModal extends Component {
+  constructor(props) {
+    super(props);
+
+    this.handleChange = this.handleChange.bind(this)
+    this.signUp = this.signUp.bind(this)
+
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+
+  signUp(e) {
+    e.preventDefault();
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password);
+    this.props.history.push("/profile")
+    .then((u) => {
+      console.log(firebase)
+      console.log('Success', u)
+    })
+    .catch((error) => {console.log(error)})
+  }
+
+  handleChange(e) {
+    this.setState({ [e.target.name]: e.target.value })
+  }
+
   render() {
     // Render nothing if the "show" prop is false
     if (!this.props.show) {
@@ -60,16 +87,16 @@ class SignupModal extends Component {
         <div style={signupCloseMainDiv}>
         <button style={signupCloseModalButton} onClick={this.props.onClose}>X</button>
         </div>
+        <form>
           <h1 style={signupModalHeader}>Sign Up</h1>
           <div style={signupModalMainDiv}>
           <h2>Email:</h2>
-          <input style={signupModalInput} />
+          <input value={this.state.email} onChange={this.handleChange} type="email" name="email" style={signupModalInput} />
           <h2>Password:</h2>
-          <input style={signupModalInput} />
-          <h2>Confirm Password:</h2>
-          <input style={signupModalInput} />
+          <input value={this.state.password} onChange={this.handleChange} type="password" name="password" style={signupModalInput} />
           </div>
-          <Button color="pink" style={signupSubmitButton}>Submit</Button>
+          <Button onClick={this.signUp} color="pink" style={signupSubmitButton}>Submit</Button>
+          </form>
           <br />
           <p style={loginWords}>Already a User? <span>Login</span></p>
         </div>
