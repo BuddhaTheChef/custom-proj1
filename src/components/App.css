@@ -48,6 +48,14 @@ height: 100vh;
  border-radius: 50%;
  margin-left: 10px !important;
 }
+/* //////////////////////////////////Job List//////////////////////////////////////////////// */
+
+.job-list-posts {
+  margin-top: 28px;
+  color: whitesmoke;
+  margin-bottom: 20px;
+  padding: 30px;
+}
 
 /* /////////////////////////////////////Landing Page//////////////////////////////////////// */
 

@@ -57,14 +57,30 @@ class LoginModal extends Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      displayName: '',
+      uid: '',
+      user: null
     }
   }
 
-  login = async e =>  {
+  login(e) {
     e.preventDefault();
-    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password);
-    this.props.history.push("/profile")
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password).then((result) => {
+      console.log('user:', this.state.email, this.state.password,result.user.uid, result.user.displayName, result)
+      this.setState({
+         user: result.user
+     })
+     console.log(result.user)
+    })
+  }
+
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({user})
+      }
+    })
   }
 
   handleChange(e) {
@@ -76,6 +92,7 @@ class LoginModal extends Component {
     if (!this.props.show) {
       return null;
     }
+
     return (
       <div className="backdrop">
         <div className="modal">

@@ -56,19 +56,21 @@ class SignupModal extends Component {
 
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      displayName: ''
     }
   }
 
   signUp(e) {
     e.preventDefault();
-    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password);
-    this.props.history.push("/profile")
-    .then((u) => {
-      console.log(firebase)
-      console.log('Success', u)
+    console.log(this.state)
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+    .then(()=>{
+          this.setState({displayName: this.state.displayName})
     })
-    .catch((error) => {console.log(error)})
+    .catch(function(error) {
+      console.log(error)
+    })
   }
 
   handleChange(e) {
@@ -76,7 +78,6 @@ class SignupModal extends Component {
   }
 
   render() {
-    // Render nothing if the "show" prop is false
     if (!this.props.show) {
       return null;
     }
@@ -90,6 +91,8 @@ class SignupModal extends Component {
         <form>
           <h1 style={signupModalHeader}>Sign Up</h1>
           <div style={signupModalMainDiv}>
+          <h2>Full Name:</h2>
+          <input value={this.state.displayName} onChange={this.handleChange} type="displayName" name="displayName" style={signupModalInput} />
           <h2>Email:</h2>
           <input value={this.state.email} onChange={this.handleChange} type="email" name="email" style={signupModalInput} />
           <h2>Password:</h2>
