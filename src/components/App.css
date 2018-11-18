@@ -130,7 +130,7 @@ height: 100%;
 }
 
 .profile-info-header {
-height: 59%;
+height: 630px;
 margin-top: 65px;
 justify-content: center;
 align-items: center;
@@ -223,7 +223,7 @@ margin-top: 65px;
       border-radius: 37px;
       width: 250px;
       height: 250px;
-  
+
 }
 
  /* /////////////////////////////////////Create Jobs Page//////////////////////////////////////// */
