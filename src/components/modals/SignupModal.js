@@ -3,6 +3,7 @@ import "../App.css";
 import PropTypes from "prop-types";
 import firebase from '../../config/firebase'
 import { Button } from 'semantic-ui-react'
+import {withRouter} from 'react-router-dom'
 
 
 const signupModalHeader = {
@@ -57,17 +58,28 @@ class SignupModal extends Component {
     this.state = {
       email: '',
       password: '',
-      displayName: ''
+      displayName: '',
+      user: ''
     }
+  }
+
+  componentDidMount() {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({user})
+      }
+    })
   }
 
   signUp(e) {
     e.preventDefault();
     console.log(this.state)
     firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
-    .then(()=>{
-          this.setState({displayName: this.state.displayName})
-    })
+    .then((user) => {
+      console.log(user.user)
+      user.user.updateProfile({displayName: this.state.displayName});
+
+  })
     .catch(function(error) {
       console.log(error)
     })
@@ -114,4 +126,4 @@ SignupModal.propTypes = {
   children: PropTypes.node
 };
 
-export default SignupModal;
+export default withRouter(SignupModal);

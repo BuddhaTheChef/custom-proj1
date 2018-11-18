@@ -22,7 +22,7 @@ const NavBar = (props) => {
          </Menu.Item>
          {auth.uid ? (
            <Menu.Item as={NavLink} to='/profile'>
-         <div className="nav-button" basic="true" color='black'>{auth.email}</div>
+         <div className="nav-button" basic="true" color='black'>{auth.displayName}</div>
           <img className="nav-default-img" src={defaultPic} alt="default pic" />
          </Menu.Item>
 
