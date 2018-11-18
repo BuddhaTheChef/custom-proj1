@@ -10,6 +10,7 @@ import Showcase from "./showcase/Showcase";
 import Candidates from "./candidates/Candidates";
 import CreateJobPosts from "./jobposts/CreateJobPosts";
 import Profile from "./profile/Profile";
+import ProfileImages from './profile/ProfileImages'
 import { CSSTransition } from 'react-transition-group';
 import firebase from '../config/firebase'
 
@@ -50,7 +51,8 @@ class App extends Component {
           <Route path="/showcase" component={Showcase} />
           <Route path="/candidates" component={Candidates} />
           <Route path="/createjobs" component={CreateJobPosts} />
-          <Route path="/profile" component={Profile} />
+          <Route authenticated={this.state.authenticated} path="/profile" component={Profile} />
+          <Route path="/images" component={ProfileImages}/>
         </div>
       </Router>
       </CSSTransition>
