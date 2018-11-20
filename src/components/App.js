@@ -20,7 +20,8 @@ class App extends Component {
 
     this.state = {
       user: {},
-      authenticated: false
+      authenticated: false,
+      photoURL: ''
     }
   }
 

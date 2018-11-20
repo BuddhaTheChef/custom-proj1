@@ -19,7 +19,7 @@ class Profile extends Component {
       </Menu>
       </div>
       <div className="profile-image-div">
-      <img className="profile-default-img" src={defaultPic} alt="default pic" />
+      <img className="profile-default-img" src={this.props.auth.photoURL || defaultPic} alt="default pic" />
       </div>
       <div className="profile-detail-div">
       <h1>{auth.displayName}</h1>
