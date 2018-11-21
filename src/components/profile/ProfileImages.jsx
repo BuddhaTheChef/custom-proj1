@@ -96,7 +96,9 @@ class ProfileImages extends Component {
                 src={this.state.cropResult}
               />
             )}
+            {this.state.files[0] && (
             <Button className="edit-pic-upload-button" onClick={this.uploadPhoto}>Upload</Button>
+            )}
           </Grid.Column>
         </Grid>
 

@@ -22,7 +22,7 @@ class Profile extends Component {
       <div className="profile-detail-div">
       <h1>{auth.displayName}</h1>
       <h2>{auth.email}</h2>
-      <h2>Aspirining [Enter Job Type Here]</h2>
+      <h2>MAKE THIS CONENT EDITABLE [Enter Job Type Here]</h2>
       <h3>- Enter Skill List Here -</h3>
       </div>
       </div>
