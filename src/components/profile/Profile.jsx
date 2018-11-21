@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { Button, Menu } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 import defaultPic from '../../assets/default-user-icon.jpg';
 import {connect} from 'react-redux';
-import { NavLink, withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class Profile extends Component {
   render() {
@@ -13,13 +13,11 @@ class Profile extends Component {
       <div className="main-div-profile">
       <div className="profile-info-header">
       <div className="profile-edit-header-button">
-      <Button inverted color="black">Edit Header</Button>
-      <Menu>
-      <Menu.Item as={NavLink} to='/images'>My Photos</Menu.Item>
-      </Menu>
+      <Button inverted color="black" as={Link} to='/images'>Edit Profile Image</Button>
       </div>
+
       <div className="profile-image-div">
-      <img className="profile-default-img" src={this.props.auth.photoURL || defaultPic} alt="default pic" />
+      <img className="profile-default-img" style={{backgroundImage: `url(${this.props.auth.photoURL})`}} src={this.props.auth.photoURL || defaultPic} alt="default pic" />
       </div>
       <div className="profile-detail-div">
       <h1>{auth.displayName}</h1>
