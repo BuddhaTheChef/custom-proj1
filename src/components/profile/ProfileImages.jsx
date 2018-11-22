@@ -4,8 +4,31 @@ import Dropzone from "react-dropzone";
 import Cropper from "react-cropper";
 import "cropperjs/dist/cropper.css";
 import {connect} from 'react-redux';
-import { withRouter } from 'react-router-dom'
+// import { firestoreConnect } from 'react-redux-firebase'
+import { compose } from 'redux';
+// import { withRouter } from 'react-router-dom'
 import firebase from 'firebase'
+// import {uploadProfileImage} from '../../store/actions/projectActions';
+
+// const query = ({auth}) => {
+//   return [
+//     {
+//       collection: 'users',
+//       doc: auth.uid,
+//       subcollections: [{collection: 'photos'}],
+//       storeAs: 'photos'
+//     }
+//   ]
+// }
+
+// const actions = {
+//   uploadProfileImage
+// }
+//
+// const mapState = (state) => ({
+//   auth: state.firebase.auth,
+//   profile: state.firebase.profile
+// })
 
 class ProfileImages extends Component {
   state = {
@@ -15,6 +38,23 @@ class ProfileImages extends Component {
     image: {},
     photoUrl: ''
   };
+
+  uploadImage = async () => {
+    try {
+      await this.props.uploadProfileImage(this.state.image, this.state.fileName);
+      this.cancelCrop();
+
+    } catch(error) {
+      alert('OOPs', error)
+    }
+  }
+
+  cancelCrop = () => {
+    this.setState({
+      files: [],
+      image: {}
+    })
+  }
 
   cropImage = () => {
     if (typeof this.refs.cropper.getCroppedCanvas() === "undefined") {
@@ -91,10 +131,16 @@ class ProfileImages extends Component {
           <Grid.Column width={4}>
             <Header style={{fontSize: '24px', marginBottom: '46px'}} sub color="teal" content="Step 3 - Preview and Upload" />
             {this.state.files[0] && (
+              <div>
               <Image
                 style={{ height: "200px", width: "200px",boxShadow: '0px 7px 34px 4px rgba(0,0,0, 0.43)', marginLeft: '89px' }}
                 src={this.state.cropResult}
               />
+              {/* <Button.Group>
+              <Button onClick={this.uploadImage} style={{width: '100px'}} positive icon="check" />
+              <Button onClick={this.cancelCrop} style={{width: '100px'}} icon="close" />
+              </Button.Group>*/}
+              </div>
             )}
             {this.state.files[0] && (
             <Button className="edit-pic-upload-button" onClick={this.uploadPhoto}>Upload</Button>
@@ -113,4 +159,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default withRouter(connect(mapStateToProps)(ProfileImages));
+export default compose(
+  connect(mapStateToProps),
+  // firestoreConnect(auth => query(auth))
+)(ProfileImages);
