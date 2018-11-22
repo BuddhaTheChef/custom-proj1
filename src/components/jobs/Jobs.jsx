@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "../App.css";
 import { connect } from 'react-redux';
 import JobList from './JobList'
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 
 class Jobs extends Component {
   render() {
@@ -17,9 +19,15 @@ class Jobs extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
-    projects: state.project.projects
+    projects: state.firestore.ordered.projects
   }
 }
 
-export default connect(mapStateToProps)(Jobs);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    {collection: 'projects'}
+  ])
+)(Jobs);
