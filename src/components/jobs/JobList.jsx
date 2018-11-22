@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import moment from 'moment'
 
 const JobList = ({projects}) => {
     return (
@@ -10,6 +11,7 @@ const JobList = ({projects}) => {
           <h1>{project.title}</h1>
           <p>{project.content}</p>
           <p>By: {project.authorName}</p>
+          <p>{moment(project.createdAt.toDate()).calendar()}</p>
           <hr/>
           </div>
         )

@@ -5,6 +5,7 @@
   "dependencies": {
     "firebase": "^5.5.8",
     "meetup-api": "^1.4.33",
+    "moment": "^2.22.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-cropper": "^1.0.1",
