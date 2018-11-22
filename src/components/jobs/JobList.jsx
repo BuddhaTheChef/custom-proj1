@@ -9,6 +9,7 @@ const JobList = ({projects}) => {
           <div className="job-list-posts" key={project.id}>
           <h1>{project.title}</h1>
           <p>{project.content}</p>
+          <p>By: {project.authorName}</p>
           <hr/>
           </div>
         )

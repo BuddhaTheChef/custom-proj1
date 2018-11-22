@@ -22,8 +22,8 @@ class Profile extends Component {
       <div className="profile-detail-div">
       <h1>{auth.displayName}</h1>
       <h2>{auth.email}</h2>
-      <h2 contenteditable="true">MAKE THIS CONENT EDITABLE [Enter Job Type Here]</h2>
-      <h3 contenteditable="true">- Enter Skill List Here -</h3>
+      <h2 contentEditable="true">MAKE THIS CONENT EDITABLE [Enter Job Type Here]</h2>
+      <h3 contentEditable="true">- Enter Skill List Here -</h3>
       </div>
       </div>
       <div className="profile-info-footer">
@@ -40,6 +40,7 @@ class Profile extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     auth: state.firebase.auth
   }
