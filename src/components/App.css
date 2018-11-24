@@ -52,10 +52,58 @@ height: -webkit-fill-available;
 /* //////////////////////////////////Job List//////////////////////////////////////////////// */
 
 .job-list-posts {
-  margin-top: 28px;
+  margin-top: 3%;
+  background-color: rebeccapurple;
+  margin-left: 20%;
+  margin-right: 20%;
   color: whitesmoke;
   margin-bottom: 20px;
   padding: 30px;
+  box-shadow: 0px 7px 34px 4px rgba(0,0,0,0.43);
+}
+
+/* //////////////////////////////////Showcase//////////////////////////////////////////////// */
+
+
+#content-form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(253, 227, 255);
+    height: 420px;
+}
+
+.form-main-title {
+  font-size: 30px;
+margin: 8px;
+}
+
+.form-content-title-div {
+  font-size: 20px;
+  margin: 10px 0px 3px 50px;
+}
+
+.form-content-techstack-div {
+  margin: 5px 0px 0px 50px;
+  width: 50%;
+  height: 33px;
+}
+
+.form-content-input-image {
+margin: 3px 0px 0px 50px;
+}
+
+.form-content-content {
+  margin: 5px 0px 2px 50px;
+  width: 50%;
+  height: 110px;
+}
+
+.form-button {
+position: absolute;
+left: 57%;
+top: 155px;
+width: 300px;
+height: 300px;
 }
 
 /* /////////////////////////////////////Landing Page//////////////////////////////////////// */
