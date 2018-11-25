@@ -29,6 +29,8 @@ class Showcase extends Component {
     form.reset();
   }
 
+
+
   render() {
     console.log(this.props)
     const {projects} = this.props;
@@ -56,7 +58,6 @@ class Showcase extends Component {
             <Button className="form-button" color="pink">Create</Button>
           </div>
         </form>
-        <hr />
         <div>
         <JobList projects={projects} />
         </div>

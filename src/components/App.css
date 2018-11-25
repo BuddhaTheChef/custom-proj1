@@ -53,6 +53,7 @@ height: -webkit-fill-available;
 
 .job-list-posts {
   margin-top: 3%;
+  border-radius: 8px;
   background-color: rebeccapurple;
   margin-left: 20%;
   margin-right: 20%;
@@ -67,14 +68,16 @@ height: -webkit-fill-available;
 
 #content-form {
     display: flex;
+    box-shadow: 0px 7px 34px 4px rgba(0,0,0,0.43);
     padding-left: 230px;
     flex-direction: column;
     background-color: rgb(253, 227, 255);
-    height: 420px;
+    height: 460px;
 }
 
 .form-main-title {
   font-size: 30px;
+  padding-top: 30px;
 margin: 8px;
 margin-left: 266px;
 }
@@ -103,7 +106,7 @@ margin: 3px 0px 0px 50px;
 .form-button {
 position: absolute;
 left: 66%;
-top: 152px;
+top: 183px;
 width: 300px;
 height: 300px;
 }
