@@ -6,6 +6,7 @@ import { Button } from 'semantic-ui-react';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import JobList from '../../components/jobs/JobList'
+// import firebase from '../../config/firebase'
 
 class Showcase extends Component {
   state = {
@@ -31,9 +32,18 @@ class Showcase extends Component {
 
 
 
+
+
   render() {
     console.log(this.props)
     const {projects} = this.props;
+    // let fileButton = document.getElementById('fileButton');
+    //
+    // fileButton.addEventListener('change', (e) => {
+    //   let file = e.target.files[0];
+    //   let storageRef = firebase.storage.ref(`projects.image`)
+    // })
+
     return (
       <div style={{marginTop: '65px'}}>
         <form id="content-form" onSubmit={this.handleSubmit}>
@@ -48,7 +58,7 @@ class Showcase extends Component {
           </div>
           <div>
             <h6 className="form-content-title-div">Image</h6>
-            <input className="form-content-input-image" type="file" id="image" onChange={this.handleChange} />
+            <input className="form-content-input-image" type="file" id="fileButton" onChange={this.handleChange} />
           </div>
           <div>
             <h6 className="form-content-title-div">Content</h6>
@@ -58,6 +68,7 @@ class Showcase extends Component {
             <Button className="form-button" color="pink">Create</Button>
           </div>
         </form>
+        <hr />
         <div>
         <JobList projects={projects} />
         </div>
