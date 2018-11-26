@@ -13,7 +13,8 @@ const JobList = ({projects}) => {
           <h1>Title: {project.title}</h1>
           <h3>techStack: {project.techStack}</h3>
           <div style={{display: 'flex'}}>
-          <h3>Images:</h3><img src={project.image} alt="imagezz" />
+          <h3>Images:</h3>
+          {/*<img src={project.image} alt="imagezz" />*/}
           </div>
           <h3 style={{margin: '0px'}}>About</h3>
           <p>{project.content}</p>

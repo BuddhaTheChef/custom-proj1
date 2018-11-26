@@ -13,7 +13,6 @@ class Showcase extends Component {
     title: '',
     content: '',
     techStack: '',
-    image: null
   }
 
   handleChange = (e) => {
@@ -37,12 +36,6 @@ class Showcase extends Component {
   render() {
     console.log(this.props)
     const {projects} = this.props;
-    // let fileButton = document.getElementById('fileButton');
-    //
-    // fileButton.addEventListener('change', (e) => {
-    //   let file = e.target.files[0];
-    //   let storageRef = firebase.storage.ref(`projects.image`)
-    // })
 
     return (
       <div style={{marginTop: '65px'}}>
@@ -57,8 +50,9 @@ class Showcase extends Component {
             <input className="form-content-techstack-div" type="text" id="techStack" onChange={this.handleChange} />
           </div>
           <div>
-            <h6 className="form-content-title-div">Image</h6>
+        {/* <h6 className="form-content-title-div">Image</h6>
             <input className="form-content-input-image" type="file" id="fileButton" onChange={this.handleChange} />
+        */}
           </div>
           <div>
             <h6 className="form-content-title-div">Content</h6>
@@ -93,6 +87,6 @@ const mapDispatchToProps = (dispatch) => {
 export default compose(
   connect(mapStateToProps, mapDispatchToProps),
   firestoreConnect([
-    {collection: 'projects'}
+    {collection: 'projects', orderBy: ['createdAt', 'desc']}
   ])
 )(Showcase);
